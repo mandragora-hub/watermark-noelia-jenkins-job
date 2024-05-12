@@ -4,8 +4,8 @@ remote.host = "redania.sbs"
 remote.allowAnyHosts = true
 
 node {
-    withCredentials([sshUserPrivateKey(credentialsId: 'REDANIA_SSH', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'mandragora')]) {
-        remote.user = userName
+    withCredentials([sshUserPrivateKey(credentialsId: 'REDANIA_SSH', usernameVariable: 'mandragora')]) {
+        remote.user = "mandragora"
         remote.identityFile = identity
         stage("SSH Steps Rocks!") {
             writeFile file: 'abc.sh', text: 'ls'
