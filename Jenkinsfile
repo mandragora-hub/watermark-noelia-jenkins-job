@@ -4,6 +4,10 @@ remote.host = "redania.sbs"
 remote.allowAnyHosts = true
 
 node {
+    parameters {
+        text(name: 'VIDEOLIST', defaultValue: '', description: 'Enter some video links to add watermark')
+    }
+
     withCredentials([sshUserPrivateKey(credentialsId: 'REDANIA_SSH', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'userName')]) {
         remote.user = userName
         remote.identityFile = identity
