@@ -6,7 +6,7 @@ remote.allowAnyHosts = true
 node {
     withCredentials([sshUserPrivateKey(credentialsId: 'REDANIA_SSH', usernameVariable: 'mandragora')]) {
         remote.user = "mandragora"
-        remote.identityFile = identity
+        remote.identityFile = "identity"
         stage("SSH Steps Rocks!") {
             writeFile file: 'abc.sh', text: 'ls'
             sshCommand remote: remote, command: 'for i in {1..5}; do echo -n \"Loop \$i \"; date ; sleep 1; done'
