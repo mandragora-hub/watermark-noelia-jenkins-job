@@ -24,7 +24,7 @@ node {
         
         stage('Retrieve files with regex') {
             def regexPattern = ".+\\.(mp4|avi)\$"
-            sshGet remote: remote, from: 'remote/dev/experiment/watermark-noelia/output/', filterRegex: regexPattern, into: 'output/', override: true
+            sshGet remote: remote, from: 'remote/dev/experiment/watermark-noelia/output/', filterRegex: regexPattern, into: "${WORKSPACE}/output/", override: true
         }
 
         stage('Clean files') {
