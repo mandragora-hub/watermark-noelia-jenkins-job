@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_PATH="~/remote/dev/experiment/watermark-noelia"
+BASE_PATH="/home/mandragora/remote/dev/experiment/watermark-noelia"
 INPUT_FOLDER="${BASE_PATH}/input" 
 DOWNLOAD_FOLDER="${BASE_PATH}/tiktok-downloader/cli/downloads"
 
