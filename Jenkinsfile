@@ -13,7 +13,7 @@ node {
             git credentialsId: 'GITHUB_SSH', url: 'git@github.com:mandragora-hub/watermark-noelia-jenkins-job.git'
         }
         stage("SSH Steps Rocks!") {
-            writeFile file: 'list.txt', text: "${PARAM.VIDEOLIST}"
+            writeFile file: 'list.txt', text: "${params.VIDEOLIST}"
             sshPut remote: remote, from: 'list.txt', into: 'remote/dev/experiment/watermark-noelia/cli'
             
             sshScript remote: remote, script: 'script.sh'
