@@ -10,4 +10,4 @@ node download-list.js
 mv ${DOWNLOAD_FOLDER}/* ${INPUT_FOLDER} 
 
 cd ${BASE_PATH}
-bash scripts.sh
+bash script.sh
