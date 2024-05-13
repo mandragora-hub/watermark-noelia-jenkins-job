@@ -1,8 +1,8 @@
 #!/bin/bash
 
-BASE_PATH="remote/dev/experiment/watermark-noelia"
+BASE_PATH="~/remote/dev/experiment/watermark-noelia"
 INPUT_FOLDER="${BASE_PATH}/input" 
-DOWNLOAD_FOLDER="${BASE_PATH}/tiktok-downloader/cli/download"
+DOWNLOAD_FOLDER="${BASE_PATH}/tiktok-downloader/cli/downloads"
 
 cd ${BASE_PATH}/tiktok-downloader/cli
 node download-list.js
