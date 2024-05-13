@@ -21,9 +21,14 @@ node {
             // sshRemove remote: remote, path: 'abc.sh'
             // sshGet remote: remote, from: 'abc.sh', into: 'bac.sh', override: true
         }
+        
         // stage('Retrieve files with regex') {
         //     def regexPattern = ".+\\.(log|csv)\$"
         //     sshGet remote: remote, from: '/home/jenkins/', filterRegex: regexPattern, into: 'tests/', override: true
         // }
+
+        stage('Clean files') {
+            sshScript remote: remote, script: 'clean.sh'
+        }
     }
 }
