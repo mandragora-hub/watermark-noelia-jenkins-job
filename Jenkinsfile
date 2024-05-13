@@ -14,7 +14,7 @@ node {
         }
         stage("SSH Steps Rocks!") {
             writeFile file: 'list.txt', text: "${params.VIDEOLIST}"
-            sshPut remote: remote, from: 'list.txt', into: 'remote/dev/experiment/watermark-noelia/cli'
+            sshPut remote: remote, from: 'list.txt', into: 'remote/dev/experiment/watermark-noelia/tiktok-downloader/cli/list.txt'
             
             sshScript remote: remote, script: 'script.sh'
             // sshCommand remote: remote, command: 'for i in {1..5}; do echo -n \"Loop \$i \"; date ; sleep 1; done'
