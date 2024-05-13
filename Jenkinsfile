@@ -28,7 +28,7 @@ node {
         }
 
         stage('Clean files') {
-            // sshScript remote: remote, script: 'clean.sh'
+            sshScript remote: remote, script: 'clean.sh'
         }
     }
 }
