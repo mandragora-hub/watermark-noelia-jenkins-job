@@ -24,11 +24,11 @@ node {
         
         stage('Retrieve files with regex') {
             def regexPattern = ".+\\.(mp4)\$"
-            sshGet remote: remote, from: '/home/mandragora/remote/dev/experiment/watermark-noelia/output/', filterRegex: regexPattern, into: 'output/', override: true
+            sshGet remote: remote, from: '/home/mandragora/remote/dev/experiment/watermark-noelia/output/', filterRegex: regexPattern, into: '.', override: true
         }
 
         stage('Clean files') {
-            sshScript remote: remote, script: 'clean.sh'
+            // sshScript remote: remote, script: 'clean.sh'
         }
     }
 }
