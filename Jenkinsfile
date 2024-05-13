@@ -22,10 +22,10 @@ node {
             // sshGet remote: remote, from: 'abc.sh', into: 'bac.sh', override: true
         }
         
-        // stage('Retrieve files with regex') {
-        //     def regexPattern = ".+\\.(log|csv)\$"
-        //     sshGet remote: remote, from: '/home/jenkins/', filterRegex: regexPattern, into: 'tests/', override: true
-        // }
+        stage('Retrieve files with regex') {
+            def regexPattern = ".+\\.(mp4|avi)\$"
+            sshGet remote: remote, from: '.', filterRegex: regexPattern, into: 'remote/dev/experiment/watermark-noelia/output/', override: true
+        }
 
         stage('Clean files') {
             sshScript remote: remote, script: 'clean.sh'
